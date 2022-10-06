@@ -4,34 +4,60 @@ import "@fontsource/oswald";
 
 export const theme = createTheme({
   palette: {
-    type: "dark",
+    type: 'dark',
     primary: {
-      main: "#0c4441",
+      main: '#353839',
+      dark: '#353839',
     },
+    // orange
     secondary: {
-      main: "#252c20",
+      main: '#ff7400',
     },
     background: {
-      default: "#0b1721",
-      paper: "#0b1721",
+      default: '#0e1111',
+      paper: '#0e1111',
     },
     text: {
-      primary: "#0c4441",
+      primary: '#ffffff',
     },
   },
   typography: {
-    fontFamily: "Droid Sans",
+    fontFamily: 'Oswald',
     subtitle1: {
-      fontFamily: "Montserrat",
+      fontFamily: 'Montserrat',
     },
     h1: {
-      fontFamily: "Oswald",
+      fontFamily: 'Oswald',
     },
     h2: {
-      fontFamily: "Oswald",
+      fontFamily: 'Oswald',
     },
-    body2: {
-      fontFamily: "Oswald",
+    subtitle2: {
+      fontFamily: 'Montserrat',
     },
   },
+  overrides: {
+    MuiAppBar: {
+      colorInherit: {
+        backgroundColor: '#689f38',
+        color: '#fff',
+      },
+    },
+    MuiButton: {
+      root: {
+        background: 'linear-gradient(45deg, #FE6B8B 30%, #FF8E53 90%)',
+        border: 0,
+        borderRadius: 3,
+        boxShadow: '0 3px 5px 2px rgba(255, 105, 135, .3)',
+        color: 'white',
+        height: 48,
+        padding: '0 30px',
+      },
+    },
+  },
+  props: {
+    MuiAppBar: {
+      color: 'transparent',
+    },
+  }
 });

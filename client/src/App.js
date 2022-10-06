@@ -50,7 +50,6 @@ function App() {
   return (
     <ApolloProvider client={client}>
       <ThemeProvider theme={theme}>
-        <Container maxWidth="sm">
         <Header />
           <Box sx={{ my: 4 }}>
             <Typography variant="h4" component="h1" gutterBottom>
@@ -62,7 +61,6 @@ function App() {
             </Typography>
             <Copyright />
           </Box>
-        </Container>
       </ThemeProvider>
     </ApolloProvider>
   );
