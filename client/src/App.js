@@ -9,8 +9,13 @@ import {
 // import { setContext } from '@apollo/client/link/context'
 
 import Home from "./pages/Home";
+import Merch from './pages/Merch';
+import Shows from "./pages/Shows";
+import Booking from './pages/Booking';
+import About from './pages/About'
+
 import Header from './components/Header';
-import Footer from './components/Footer'
+import Footer from './components/Footer';
 
 import { theme } from "./theme";
 import { ThemeProvider } from "@mui/material";
@@ -20,23 +25,6 @@ import Typography from "@mui/material/Typography";
 import Box from "@mui/material/Box";
 import Link from "@mui/material/Link";
 
-function Copyright() {
-  return (
-    <Typography variant="body2" color="text.secondary" align="center">
-      {"COPYRIGHT © "}
-      <Link
-        color="inherit"
-        href="https://www.github.com/olivelliott"
-        target="_blank"
-        underline="none"
-      >
-        OLIVE
-      </Link>{" "}
-      {new Date().getFullYear()}
-      {""}
-    </Typography>
-  );
-}
 
 function App() {
   const httpLink = createHttpLink({
@@ -57,10 +45,13 @@ function App() {
               <Router>
                 <Routes>
                   <Route path="/" element={<Home />} />
+                  <Route path='/Merch' element={<Merch />} />
+                  <Route path='/Shows' element={<Shows />} />
+                  <Route path='/Booking' element={<Booking />} />
+                  <Route path='/About' element={<About />} />
                 </Routes>
               </Router>
             </Typography>
-            <Copyright />
           </Box>
         <Footer />
       </ThemeProvider>

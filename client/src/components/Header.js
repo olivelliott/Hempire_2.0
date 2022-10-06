@@ -1,42 +1,51 @@
-// import { AppBar, Toolbar } from "@mui/material";
-// import React from "react";
-
-// export default function Header() {
-//   const displayDesktop = () => {
-//     return <Toolbar>Header</Toolbar>;
-//   };
-  
-//   return (
-//     <header>
-//       <AppBar>{displayDesktop()}</AppBar>
-//     </header>
-//   );
-// }
-
 import { useState } from 'react'
 
 import icon from '../assets/icons/scythe.png';
 
-import AppBar from '@mui/material/AppBar';
-import Box from '@mui/material/Box';
-import Toolbar from '@mui/material/Toolbar';
-import IconButton from '@mui/material/IconButton';
-import Typography from '@mui/material/Typography';
-import Menu from '@mui/material/Menu';
+import { AppBar,
+  Box,
+  Toolbar,
+  IconButton,
+  Typography,
+  Menu,
+  Container,
+  Avatar,
+  Button,
+  Tooltip,
+  MenuItem,
+  Tabs,
+  Tab
+} from '@mui/material';
+
 import MenuIcon from '@mui/icons-material/Menu';
-import Container from '@mui/material/Container';
-import Avatar from '@mui/material/Avatar';
-import Button from '@mui/material/Button';
-import Tooltip from '@mui/material/Tooltip';
-import MenuItem from '@mui/material/MenuItem';
 import AdbIcon from '@mui/icons-material/Adb';
+
+import { Link } from 'react-router-dom'
 
 const pages = ['Merch', 'Shows', 'Booking', 'About'];
 const settings = ['Profile', 'Account', 'Dashboard', 'Logout'];
 
+const LinkTab = (props) => {
+  return (
+    <Tab
+      component="a"
+      onClick={(event) => {
+        event.preventDefault();
+      }}
+      {...props}
+    />
+  );
+}
+
 const Header = () => {
   const [anchorElNav, setAnchorElNav] = useState(null);
   const [anchorElUser, setAnchorElUser] = useState(null);
+
+  const [value, setValue] = useState(0);
+
+  const handleChange = (event, newValue) => {
+    setValue(newValue);
+  };
 
   const handleOpenNavMenu = (event) => {
     setAnchorElNav(event.currentTarget);
@@ -47,6 +56,8 @@ const Header = () => {
 
   const handleCloseNavMenu = () => {
     setAnchorElNav(null);
+
+    console.log('here')
   };
 
   const handleCloseUserMenu = () => {
@@ -117,13 +128,18 @@ const Header = () => {
                 <MenuItem key={page} onClick={handleCloseNavMenu}>
                   <Typography textAlign="center" >{page}</Typography>
                 </MenuItem>
+                
+                
               ))}
+
             </Menu>
+
+            
           </Box>
           <Box
             component='img'
             maxHeight={35}
-            paddingRight={3}
+            paddingRight={1}
             src={icon}
             sx={{ display: { xs: 'flex', md: 'none' }, mr: 1 }}
           />
@@ -147,13 +163,21 @@ const Header = () => {
           </Typography>
           <Box sx={{ flexGrow: 1, display: { xs: 'none', md: 'flex' } }}>
             {pages.map((page) => (
+              <Box marginRight={2}>
               <Button
                 key={page}
                 onClick={handleCloseNavMenu}
                 sx={{ my: 2, color: 'white', display: 'block' }}
+                href={`/${page}`}
+              
               >
-                {page}
+                
+                  {page}
+          
               </Button>
+              </Box>
+
+              
             ))}
 
           </Box>

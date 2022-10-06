@@ -39,7 +39,7 @@ function Home(props)
     var items = [
         {
             name: "HEMPIRE",
-            description: "A rock and roll band based out of Boone, NC.",
+            description: "A heavy rock and roll band based out of Boone, NC.",
             button: 'Learn More'
         },
         {
