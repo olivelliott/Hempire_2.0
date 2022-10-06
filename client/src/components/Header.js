@@ -1,8 +1,9 @@
-import { useState } from 'react'
+import { useState } from "react";
 
-import icon from '../assets/icons/scythe.png';
+import icon from "../assets/icons/scythe.png";
 
-import { AppBar,
+import {
+  AppBar,
   Box,
   Toolbar,
   IconButton,
@@ -14,16 +15,16 @@ import { AppBar,
   Tooltip,
   MenuItem,
   Tabs,
-  Tab
-} from '@mui/material';
+  Tab,
+} from "@mui/material";
 
-import MenuIcon from '@mui/icons-material/Menu';
-import AdbIcon from '@mui/icons-material/Adb';
+import MenuIcon from "@mui/icons-material/Menu";
+import AdbIcon from "@mui/icons-material/Adb";
 
-import { Link } from 'react-router-dom'
+import { Link } from "react-router-dom";
 
-const pages = ['Merch', 'Shows', 'Booking', 'About'];
-const settings = ['Profile', 'Account', 'Dashboard', 'Logout'];
+const pages = ["Merch", "Shows", "Booking", "About"];
+const settings = ["Profile", "Account", "Dashboard", "Logout"];
 
 const LinkTab = (props) => {
   return (
@@ -35,7 +36,7 @@ const LinkTab = (props) => {
       {...props}
     />
   );
-}
+};
 
 const Header = () => {
   const [anchorElNav, setAnchorElNav] = useState(null);
@@ -57,7 +58,7 @@ const Header = () => {
   const handleCloseNavMenu = () => {
     setAnchorElNav(null);
 
-    console.log('here')
+    console.log("here");
   };
 
   const handleCloseUserMenu = () => {
@@ -68,12 +69,12 @@ const Header = () => {
     <AppBar position="static">
       <Container maxWidth="xl">
         <Toolbar disableGutters>
-        <Box
-            component='img'
+          <Box
+            component="img"
             maxHeight={35}
             paddingRight={3}
             src={icon}
-            sx={{ display: { xs: 'none', md: 'flex' }, mr: 1 }}
+            sx={{ display: { xs: "none", md: "flex" }, mr: 1 }}
           />
 
           <Typography
@@ -83,19 +84,17 @@ const Header = () => {
             href="/"
             sx={{
               mr: 2,
-              display: { xs: 'none', md: 'flex' },
+              display: { xs: "none", md: "flex" },
               fontWeight: 700,
-              letterSpacing: '.3rem',
-              color: 'inherit',
-              textDecoration: 'none',
+              letterSpacing: ".3rem",
+              color: "inherit",
+              textDecoration: "none",
             }}
           >
             HEMPIRE
           </Typography>
-          
 
-
-          <Box sx={{ flexGrow: 1, display: { xs: 'flex', md: 'none' } }}>
+          <Box sx={{ flexGrow: 1, display: { xs: "flex", md: "none" } }}>
             <IconButton
               size="large"
               aria-label="account of current user"
@@ -110,38 +109,40 @@ const Header = () => {
               id="menu-appbar"
               anchorEl={anchorElNav}
               anchorOrigin={{
-                vertical: 'bottom',
-                horizontal: 'left',
+                vertical: "bottom",
+                horizontal: "left",
               }}
               keepMounted
               transformOrigin={{
-                vertical: 'top',
-                horizontal: 'left',
+                vertical: "top",
+                horizontal: "left",
               }}
               open={Boolean(anchorElNav)}
               onClose={handleCloseNavMenu}
               sx={{
-                display: { xs: 'block', md: 'none' },
+                display: { xs: "block", md: "none" },
               }}
             >
               {pages.map((page) => (
                 <MenuItem key={page} onClick={handleCloseNavMenu}>
-                  <Typography textAlign="center" >{page}</Typography>
+                  <Button
+                    key={page}
+                    onClick={handleCloseNavMenu}
+                    sx={{ my: 2, color: "white", display: "block" }}
+                    href={`/${page}`}
+                  >
+                    {page}
+                  </Button>
                 </MenuItem>
-                
-                
               ))}
-
             </Menu>
-
-            
           </Box>
           <Box
-            component='img'
+            component="img"
             maxHeight={35}
             paddingRight={1}
             src={icon}
-            sx={{ display: { xs: 'flex', md: 'none' }, mr: 1 }}
+            sx={{ display: { xs: "flex", md: "none" }, mr: 1 }}
           />
 
           <Typography
@@ -151,35 +152,29 @@ const Header = () => {
             href=""
             sx={{
               mr: 2,
-              display: { xs: 'flex', md: 'none' },
+              display: { xs: "flex", md: "none" },
               flexGrow: 1,
               fontWeight: 700,
-              letterSpacing: '.3rem',
-              color: 'inherit',
-              textDecoration: 'none',
+              letterSpacing: ".3rem",
+              color: "inherit",
+              textDecoration: "none",
             }}
           >
             HEMPIRE
           </Typography>
-          <Box sx={{ flexGrow: 1, display: { xs: 'none', md: 'flex' } }}>
+          <Box sx={{ flexGrow: 1, display: { xs: "none", md: "flex" } }}>
             {pages.map((page) => (
               <Box marginRight={2}>
-              <Button
-                key={page}
-                onClick={handleCloseNavMenu}
-                sx={{ my: 2, color: 'white', display: 'block' }}
-                href={`/${page}`}
-              
-              >
-                
+                <Button
+                  key={page}
+                  onClick={handleCloseNavMenu}
+                  sx={{ my: 2, color: "white", display: "block" }}
+                  href={`/${page}`}
+                >
                   {page}
-          
-              </Button>
+                </Button>
               </Box>
-
-              
             ))}
-
           </Box>
 
           {/* <Box sx={{ flexGrow: 0 }}>

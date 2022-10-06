@@ -1,9 +1,14 @@
 import * as React from "react";
 import CssBaseline from "@mui/material/CssBaseline";
-import Box from "@mui/material/Box";
-import Typography from "@mui/material/Typography";
-import Container from "@mui/material/Container";
-import Link from "@mui/material/Link";
+import {
+  Box,
+  Typography,
+  Container,
+  Link,
+  Button
+} from '@mui/material'
+
+import InstagramIcon from '@mui/icons-material/Instagram';
 
 function Copyright() {
   return (
@@ -46,6 +51,9 @@ export default function Footer() {
           <Typography variant="body1" color="secondary">
             HEMPIRE
           </Typography>
+          <Button href={`https://www.instagram.com/hempirerocks`} target='_blank'>
+            <InstagramIcon/>
+          </Button>
           <Copyright />
         </Container>
       </Box>
