@@ -9,7 +9,8 @@ import {
 // import { setContext } from '@apollo/client/link/context'
 
 import Home from "./pages/Home";
-import Header from './components/Header'
+import Header from './components/Header';
+import Footer from './components/Footer'
 
 import { theme } from "./theme";
 import { ThemeProvider } from "@mui/material";
@@ -61,6 +62,7 @@ function App() {
             </Typography>
             <Copyright />
           </Box>
+        <Footer />
       </ThemeProvider>
     </ApolloProvider>
   );

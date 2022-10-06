@@ -14,6 +14,9 @@
 // }
 
 import { useState } from 'react'
+
+import icon from '../assets/icons/scythe.png';
+
 import AppBar from '@mui/material/AppBar';
 import Box from '@mui/material/Box';
 import Toolbar from '@mui/material/Toolbar';
@@ -28,7 +31,7 @@ import Tooltip from '@mui/material/Tooltip';
 import MenuItem from '@mui/material/MenuItem';
 import AdbIcon from '@mui/icons-material/Adb';
 
-const pages = ['Merch', 'Shows', 'Booking'];
+const pages = ['Merch', 'Shows', 'Booking', 'About'];
 const settings = ['Profile', 'Account', 'Dashboard', 'Logout'];
 
 const Header = () => {
@@ -54,7 +57,14 @@ const Header = () => {
     <AppBar position="static">
       <Container maxWidth="xl">
         <Toolbar disableGutters>
-          <AdbIcon sx={{ display: { xs: 'none', md: 'flex' }, mr: 1 }} />
+        <Box
+            component='img'
+            maxHeight={35}
+            paddingRight={3}
+            src={icon}
+            sx={{ display: { xs: 'none', md: 'flex' }, mr: 1 }}
+          />
+
           <Typography
             variant="h6"
             noWrap
@@ -69,8 +79,9 @@ const Header = () => {
               textDecoration: 'none',
             }}
           >
-            LOGO
+            HEMPIRE
           </Typography>
+          
 
 
           <Box sx={{ flexGrow: 1, display: { xs: 'flex', md: 'none' } }}>
@@ -109,7 +120,14 @@ const Header = () => {
               ))}
             </Menu>
           </Box>
-          <AdbIcon sx={{ display: { xs: 'flex', md: 'none' }, mr: 1 }} />
+          <Box
+            component='img'
+            maxHeight={35}
+            paddingRight={3}
+            src={icon}
+            sx={{ display: { xs: 'flex', md: 'none' }, mr: 1 }}
+          />
+
           <Typography
             variant="h5"
             noWrap
@@ -125,7 +143,7 @@ const Header = () => {
               textDecoration: 'none',
             }}
           >
-            LOGO
+            HEMPIRE
           </Typography>
           <Box sx={{ flexGrow: 1, display: { xs: 'none', md: 'flex' } }}>
             {pages.map((page) => (

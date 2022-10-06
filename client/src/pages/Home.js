@@ -39,15 +39,18 @@ function Home(props)
     var items = [
         {
             name: "HEMPIRE",
-            description: "A rock and roll band based out of Boone, NC."
+            description: "A rock and roll band based out of Boone, NC.",
+            button: 'Learn More'
         },
         {
             name: "MERCH",
-            description: "Our latest merch!"
+            description: "Our latest merch!",
+            button: 'View Products'
         },
         {
             name: 'UPCOMING SHOWS',
-            description: 'View our upcoming shows'
+            description: 'View our upcoming shows',
+            button: 'Check it out!'
         }
     ]
 
@@ -69,7 +72,7 @@ function Item(props)
             <p>{props.item.description}</p>
 
             <Button className="CheckButton" variant='outlined' color='secondary'>
-                Check it out!
+                {props.item.button}
             </Button>
   
         </Paper>
