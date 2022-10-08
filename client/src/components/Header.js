@@ -38,7 +38,7 @@ const LinkTab = (props) => {
   );
 };
 
-const Header = () => {
+const Header = (props) => {
   const [anchorElNav, setAnchorElNav] = useState(null);
   const [anchorElUser, setAnchorElUser] = useState(null);
 
@@ -66,9 +66,9 @@ const Header = () => {
   };
 
   return (
-    <AppBar position="static">
-      <Container maxWidth="xl">
-        <Toolbar disableGutters>
+    <AppBar position="static" color={props.color}>
+      <Container maxWidth="xl" >
+        <Toolbar disableGutters >
           <Box
             component="img"
             maxHeight={35}

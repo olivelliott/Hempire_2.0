@@ -5,10 +5,13 @@ import {
   Typography,
   Container,
   Link,
-  Button
+  Button,
+  IconButton
 } from '@mui/material'
 
 import InstagramIcon from '@mui/icons-material/Instagram';
+import FacebookIcon from '@mui/icons-material/Facebook';
+import HeadphonesIcon from '@mui/icons-material/Headphones';
 
 function Copyright() {
   return (
@@ -20,10 +23,10 @@ function Copyright() {
         target="_blank"
         underline="none"
       >
-        OLIVE
+        OE
       </Link>{" "}
       {new Date().getFullYear()}
-      {"."}
+      {""}
     </Typography>
   );
 }
@@ -51,9 +54,15 @@ export default function Footer() {
           <Typography variant="body1" color="secondary">
             HEMPIRE
           </Typography>
-          <Button href={`https://www.instagram.com/hempirerocks`} target='_blank'>
-            <InstagramIcon/>
-          </Button>
+          <IconButton href={`https://www.instagram.com/hempirerocks`} target='_blank' color="primary">
+            <InstagramIcon sx={{ "&:hover": { color: "#ff7400" } }}/>
+          </IconButton>
+          <IconButton href={`https://www.facebook.com/hempire`} color="primary">
+            <FacebookIcon sx={{ "&:hover": { color: "#ff7400" } }}/>
+          </IconButton>
+          <IconButton href={`https://hempirerocks.bandcamp.com/`} target='_blank' color="primary">
+            <HeadphonesIcon sx={{ "&:hover": { color: "#ff7400" } }}/>
+          </IconButton>
           <Copyright />
         </Container>
       </Box>
