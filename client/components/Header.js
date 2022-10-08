@@ -1,6 +1,6 @@
 import { useState } from "react";
 
-import icon from "../assets/icons/scythe.png";
+import icon from "../public/assets/icons/scythe.png";
 
 import {
   AppBar,
@@ -21,22 +21,10 @@ import {
 import MenuIcon from "@mui/icons-material/Menu";
 import AdbIcon from "@mui/icons-material/Adb";
 
-import { Link } from "react-router-dom";
 
 const pages = ["Merch", "Shows", "Booking", "About"];
 const settings = ["Profile", "Account", "Dashboard", "Logout"];
 
-const LinkTab = (props) => {
-  return (
-    <Tab
-      component="a"
-      onClick={(event) => {
-        event.preventDefault();
-      }}
-      {...props}
-    />
-  );
-};
 
 const Header = (props) => {
   const [anchorElNav, setAnchorElNav] = useState(null);
