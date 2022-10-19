@@ -5,16 +5,12 @@ import {
   createHttpLink,
 } from "@apollo/client";
 // import { setContext } from '@apollo/client/link/context'
-import Head from 'next/head';
+import Head from "next/head";
 
-import Home from './Home'
+import Home from "./Home";
 
-import Header from '../components/Header'
-
-
-
-
-
+import Header from "../components/Header";
+import Footer from "../components/Footer";
 
 export default function App() {
   const httpLink = createHttpLink({
@@ -46,16 +42,24 @@ export default function App() {
     //     <Footer />
     //   </ThemeProvider>
     // </ApolloProvider>
-    
+
     <ApolloProvider client={client}>
-    <Head>
+      <Head>
         <title>Hempire</title>
       </Head>
-      <section>
+
+      <header>
         <Header />
-        <Home/>
+      </header>
+
+      <section>
+      <h1 className='text-3xl font-bold'>HELLO WORKD</h1>
+        <Home />
       </section>
-      </ApolloProvider>
-     
+
+      <footer>
+        <Footer />
+      </footer>
+    </ApolloProvider>
   );
 }
