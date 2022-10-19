@@ -30,7 +30,6 @@
 
 // export default Home;
 
-import React from 'react';
 import Carousel from 'react-material-ui-carousel'
 import { Paper, Button, Container } from '@mui/material'
 
@@ -55,7 +54,7 @@ function Home(props)
     ]
 
     return (
-        <Carousel>
+        <Carousel className='mt-10 p-5'>
             {
                 items.map( (item, i) => <Item key={i} item={item} /> )
             }
@@ -66,7 +65,7 @@ function Home(props)
 function Item(props)
 {
     return (
-        <Container maxWidth='sm' margin='5'>
+        <Container>
         <Paper>
             <h2>{props.item.name}</h2>
             <p>{props.item.description}</p>

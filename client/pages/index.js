@@ -23,27 +23,7 @@ export default function App() {
   });
 
   return (
-    // <ApolloProvider client={client}>
-    //   <ThemeProvider theme={theme}>
-    //     <Header />
-    //       <Box sx={{ my: 4 }}>
-    //         <Typography variant="h4" component="h1" gutterBottom>
-    //           <Router>
-    //             <Routes>
-    //               <Route path="/" element={<Home />} />
-    //               <Route path='/Merch' element={<Merch />} />
-    //               <Route path='/Shows' element={<Shows />} />
-    //               <Route path='/Booking' element={<Booking />} />
-    //               <Route path='/About' element={<About />} />
-    //             </Routes>
-    //           </Router>
-    //         </Typography>
-    //       </Box>
-    //     <Footer />
-    //   </ThemeProvider>
-    // </ApolloProvider>
-
-    <ApolloProvider client={client}>
+    <ApolloProvider client={client} data-theme='halloween'>
       <Head>
         <title>Hempire</title>
       </Head>
@@ -53,13 +33,10 @@ export default function App() {
       </header>
 
       <section>
-      <h1 className='text-3xl font-bold'>HELLO WORKD</h1>
         <Home />
+        <button className="btn">button</button>
       </section>
-
-      <footer>
         <Footer />
-      </footer>
     </ApolloProvider>
   );
 }
